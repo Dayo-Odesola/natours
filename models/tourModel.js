@@ -3,11 +3,16 @@ const tourSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, 'A tour must have a name'],
+    trim: true,
     unique: true,
   },
   duration: {
     type: Number,
-    required: [true, 'A tour must have a location'],
+    required: [true, 'A tour must have a duration'],
+  },
+  ratings: {
+    type: Number,
+    default: 4.5
   },
   maxGroupSize: {
     type: Number,
@@ -32,7 +37,7 @@ const tourSchema = new mongoose.Schema({
   priceDiscount: Number,
   summary: {
     type: String,
-    trim: true,
+    trim: true, // removes all the white spaces in the beg and end
     required: [true, 'A tour must have a description'],
   },
   description: {

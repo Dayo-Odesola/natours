@@ -16,6 +16,6 @@ mongoose.connect(DB, {
   useFindAndModify: false,
   useUnifiedTopology: true
 }).then(app.listen(port, () => {
-  console.log(`Listening for requests on port ${port}...`.brightYellow.underline);
+  console.log(`Listening for requests on port ${port}...`.white.underline);
 }))
 
